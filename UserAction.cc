@@ -90,18 +90,23 @@ void UserAction::InitGame() {
 void UserAction::Initialize() {
     // TODO: You can do some initialization in this function.
     // Feel free to modify this function.
-    //DefaultInitialize() will make you a MEGABurger!
+    DefaultInitialize(); //will make you a MEGABurger!
 
     cout << "Initializing the game..." << endl;
-    SaladInitialize();
+    //SaladInitialize();
+}
+
+void SaladInitialize(){
+    //while(!operations.empty())operations.pop();
+    return;
 }
 
 // Main Function of you game logic
 void UserAction::SendOperation() {
     // TODO: Implement your gaming logic here
     
-    SaladSendOperation();
-    //DefaultSendOperation();
+    //SaladSendOperation();
+    DefaultSendOperation();
 }
 
 
@@ -253,23 +258,6 @@ void MakeSalad() {//--> Done
     MoveCounterToCounterAndinteract(NormalCounter,DeliveryCounter);
     // Send Order!
 }
-
-// void SimpleExample() {
-//     // The beginning steps of making a salad
-
-//     operations.clear();
-//     // Move to Cabbage Counter
-//     pair<int, int> playerPosition = controller.GetPlayerPosition();
-//     MovePointToCounter(playerPosition, CabbageCounter);
-//     // Grab Cabbage
-//     operations.push_back("e");
-//     // Move to Cutting Counter
-//     MoveCounterToCounter(CabbageCounter, CuttingCounter);
-//     // Cut Cabbage
-//     operations.push_back("e");
-//     // ... Do The Rest By Yourself !
-// }
-
 void MakeBurger() {
     //TODO: 
     MovePointToCounterAndinteract(controller.GetPlayerPosition(),RawPattyCounter);
@@ -437,7 +425,7 @@ void MegaBurgerSendOperation() {
     Initializeforallfood();
 }*/
 void DefaultSendOperation() {
-    char s=operations.front(); //如果直接在上面initialize會出事嗎
+    char s = operations.front(); //如果直接在上面initialize會出事嗎
     if (!operations.empty()) {
         s = operations.front();
         operations.pop();
